@@ -1,0 +1,7 @@
+<h1> <%= pluralize(@suggestions.size, "Suggestion") %></h1>
+
+<ul>
+  <% @suggestions.each do |suggestion| %>
+    <li><%= suggestion %> </li>    
+  <% end %>
+</ul>

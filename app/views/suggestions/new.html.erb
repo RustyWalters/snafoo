@@ -1,0 +1,16 @@
+<%= form_tag("/suggestions/create", method: "post") do %>
+  <%= text_area_tag(:message, @parsed, size: "120x20") %> <br/>
+  <p>
+  <%= label_tag(:sug_list, "Available Suggestions:") %>
+  <%= select_tag(:q, options_for_select(@snacks)) %> 
+    <p>  
+      <%= label_tag(:new_sug, "Enter new suggestion:") %> <br/>
+      <%= label_tag(:sug_name, "Name:") %>
+      <%= text_field_tag(:sug_name) %>
+      <%= label_tag(:pur_location, "Purchase location:") %>
+      <%= text_field_tag(:pur_location) %>
+
+    </p>
+  </p>
+  <%= submit_tag("Submit Suggestion") %>
+<% end %>
