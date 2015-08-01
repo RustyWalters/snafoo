@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get "suggestions" => "suggestions#index"
-  get "suggestions/new" => "suggestions#new"
-  post "suggestions/create" => "suggestions#create"
+  # get "suggestions" => "suggestions#index"
+  # get "suggestions/new" => "suggestions#new"
+  # post "suggestions/create" => "suggestions#create"
+  resources :suggestions
 end

@@ -6,9 +6,29 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header style="padding: 5px; color: #F0F0F0; background: #237CBE;">
+  <h1>Snafoo</h1>
+</header>
 <body>
-
+<aside style="float: right; background: #F0F0F0; width: 200px;">
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'Voting', suggestions_path %>
+      </li>
+      <li>
+        <%= link_to 'Add Suggestion', new_suggestion_path %>
+      </li>
+    </ul>
+  </nav>
+</aside>
 <%= yield %>
 
 </body>
+<footer style="text-align: center; padding: 5px; color: #237CBE; background: #F0F0F0">
+  <p>
+    Copyright &copy; 2015
+    <%= link_to 'Rusty Walters','https://www.linkedin.com/profile/view?id=11100035&authType=NAME_SEARCH&authToken=uclJ&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A11100035%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1438317604745%2Ctas%3Aruss' %>
+  </p>
+</footer>
 </html>
