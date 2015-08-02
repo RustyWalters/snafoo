@@ -6,7 +6,7 @@ class CreateSuggestions < ActiveRecord::Migration
       t.date :lastPurchasedDate
       t.integer :votes
       t.integer :suggestedMonth
-
+      t.integer :snackRefId
       t.timestamps
     end
   end

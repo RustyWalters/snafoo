@@ -1,4 +1,5 @@
-<%= form_for(@suggestion) do |f| %>
+<%= form_for(@suggestion) do |f| %>  
+  <%= render 'shared/errors' %>
   <%= text_area_tag(:message, @parsed, size: "120x20") %> <br/><p>
     <%= label_tag(:sug_list, "Available Suggestions:") %>
     <%= select_tag(:dd_suggestion, options_for_select(@snacks, 999999999)) %> 
