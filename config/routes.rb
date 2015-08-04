@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-  # get "suggestions" => "suggestions#index"
-  # get "suggestions/new" => "suggestions#new"
-  # post "suggestions/create" => "suggestions#create"
+  root "suggestions#index"
+  get "suggestions/vote" => "suggestions#vote", as: "vote"
   resources :suggestions
 end
