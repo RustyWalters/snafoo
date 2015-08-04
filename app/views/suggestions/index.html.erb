@@ -1,14 +1,28 @@
   <h1>Snack Voting</h1>
-  <h2> <%= pluralize(@selected_snacks.size, "Suggestion") %></h2>
   <p>
-    <% @selected_snacks.each do |suggestion| %>
-      <h3> <%= suggestion.name %> </h3>  
-           <%= label_tag(:l, "Total votes:") %> 
-           <%= label_tag suggestion.votes, nil, :id => "lblvote_#{suggestion.snackRefId}", :class => "voteLbl"%>
-           <%= submit_tag "Vote Up", :id => suggestion.snackRefId, :type => 'button', :class => "voteBtn" %> <br/>
-           <%= label_tag(:l, "Last Purchase:") %> 
-           <%= suggestion.lastPurchasedDate %>
-           
-    <% end %>
+    <section class = "snacks">
+      <section class = "voting_suggestions">
+        <h2> <%= pluralize(@selected_snacks.size, "Suggestion") %></h2>
+
+        <% @selected_snacks.each do |suggestion| %>
+          <h3> <%= suggestion.name %> </h3>  
+               <%= label_tag(:l, "Total votes:") %> 
+               <%= label_tag suggestion.votes, nil, :id => "lblvote_#{suggestion.snackRefId}", :class => "voteLbl"%>
+               <%= submit_tag "Vote Up", :id => suggestion.snackRefId, :type => 'button', :class => "voteBtn" %> <br/>
+               <%= label_tag(:l, "Last Purchase:") %> 
+               <%= suggestion.lastPurchasedDate %>
+        <% end %>
+      </section>
+      <section class = "always_purchased">
+       <h2> <%= pluralize(@selected_snacks.size, "Purchase") %></h2>
+        <% @selected_snacks.each do |suggestion| %>
+          <h3> <%= suggestion.name %> </h3>  
+               <%= label_tag(:l, "Total votes:") %> 
+               <%= label_tag suggestion.votes, nil, :id => "lblvote_#{suggestion.snackRefId}", :class => "voteLbl"%>
+               <%= submit_tag "Vote Up", :id => suggestion.snackRefId, :type => 'button', :class => "voteBtn" %> <br/>
+               <%= label_tag(:l, "Last Purchase:") %> 
+               <%= suggestion.lastPurchasedDate %>
+        <% end %>
+      </section>
+    </section>
   </p>
-  <h2><%= @mycookie %></h2>

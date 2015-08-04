@@ -4,3 +4,74 @@
 #vote {};
 #SnackId{};
 #voteLbl{};
+
+/*
+IT483 Homework 3
+Author:  Russell Walters
+This page and CSS style sheet will represent my personal resume.
+The html and CSS are valid based on using external validator programs.
+*/
+
+/*HTML element selectors*/
+body { /*set the desired font in the body element*/
+  font-family: Verdana, Sans-serif;  
+   }
+
+h1 {  /*center all h1 elements*/
+  text-align: center;
+   }
+
+h2, h3 {  /*needed to setting padding and margins to 0 for the tops of the 3 columns to line up*/
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin: 0px;
+   }
+
+label {
+  padding: 8px;
+}
+
+input[type="text"] {
+  border-width: medium;
+}
+
+
+.snacks {  /*define a class for controlling suggestions floating alignment*/
+  width: 100%;
+  float: left;
+  padding-bottom: 25px;
+  padding-left: 100px;
+}
+
+.voting_suggestions {  /*used to control the voting_suggestions name styles*/
+  float: left;
+  width: 50%;
+}
+
+.always_purchased {  /*used to control the always purchase styles*/
+  float: left;
+  width: 50%;
+}
+
+.suggestions {  /*define a class for controlling suggestions floating alignment*/
+  width: 100%;
+  float: left;
+  padding-bottom: 25px;
+  padding-left: 100px;
+}
+
+.available_suggestions {  /*used to control the available_suggestions name styles*/
+  float: left;
+  width: 50%;
+
+}
+
+.new_suggestion {  /*used to control the new suggestion styles*/
+  float: left;
+  width: 50%;
+}
+
+.create_button {  /*used to control the create button styles*/
+  
+}
+

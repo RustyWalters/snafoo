@@ -6,6 +6,8 @@ class Suggestion < ActiveRecord::Base
   validate :monthly_suggestion_made
 
   def check_for_duplicates
+    #needed to confirm all 3 attributes are the same before considering a duplicate
+    #the number of votes needed to be considered, otherwise voting would fail.
     current_suggestions = Suggestion.all
     current_suggestions.each do |sug|
       if sug.name.strip.downcase == name.strip.downcase &&
@@ -18,6 +20,8 @@ class Suggestion < ActiveRecord::Base
   end
 
   def monthly_suggestion_made
+    #used for displaying an error if the user has already submitted a suggestion
+    #for the month
       if monthly_suggestion
         logger.debug "monthly_suggestion_made => #{monthly_suggestion}"
         errors[:base] << "Monthly suggestion already made."

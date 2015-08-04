@@ -1,45 +1,22 @@
-<%= form_for(@suggestion) do |f| %>  
-  <h1>Snack Suggestions</h1>
-  <%= render 'shared/errors' %>
-  <%= text_area_tag(:message, @parsed, size: "120x20") %> <br/><p>
-    <%= label_tag(:sug_list, "Available Suggestions:") %>
-    <%= select_tag(:dd_suggestion, options_for_select(@snacks, 999999999)) %> 
-  </p>  
-  <p>
-    <%= f.label :Enter_new_suggestion %>
-  </p>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :purchase_location %>
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-  
-
-<% end %>
-
-
-
-<!--
- <%= form_tag("/suggestions/create", method: "post") do %>
-   <%= text_area_tag(:message, @parsed, size: "120x20") %> <br/>
-   <p>
-   <%= label_tag(:sug_list, "Available Suggestions:") %>
-   <%= select_tag(:q, options_for_select(@snacks, 9999)) %> 
-     <p>  
-       <%= label_tag(:new_sug, "Enter new suggestion:") %> <br/>
-       <%= label_tag(:sug_name, "Name:") %>
-       <%= text_field_tag(:sug_name) %>
-       <%= label_tag(:pur_location, "Purchase location:") %>
-       <%= text_field_tag(:pur_location) %>
-
-     </p>
-   </p>
-   <%= submit_tag("Submit Suggestion") %>
- <% end %>
- -->
+<h1>Snack Suggestions</h1>
+ 
+<section class = "suggestions">
+ 
+  <%= form_for(@suggestion) do |f| %>  
+    <%= render 'shared/errors' %>
+     <section class = "available_suggestions">
+        <h3>Available Suggestions:</h3>
+        <%= select_tag(:dd_suggestion, options_for_select(@snacks, 999999999)) %> 
+      </section>
+      <section class = "new_suggestion">  
+        <h3>Enter New Suggestion:</h3>       
+          <%= f.label :name %>
+          <%= f.text_field :name %><br/><br/>
+          <%= f.label :purchase_location %>
+          <%= f.text_field :location %>
+      </section>
+      <section class = "create_button">
+        <%= f.submit %>
+      </section>
+  <% end %>
+</section>
