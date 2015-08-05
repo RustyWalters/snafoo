@@ -24,8 +24,3 @@ group :test do
   gem "capybara", "2.1.0"
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-    
