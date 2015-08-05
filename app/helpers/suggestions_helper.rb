@@ -1,6 +1,7 @@
 module SuggestionsHelper
    SNACKS_URL =  'https://api-snacks.nerderylabs.com/v1/snacks?ApiKey=e1daaff1-786d-431c-9d59-c00054451baf'
 
+  #calling snack web service to get list of snacks
   def retrieve_snack_list
     response = RestClient.get SNACKS_URL
     logger.debug "web service response code => #{response.code}"
@@ -10,6 +11,7 @@ module SuggestionsHelper
     parsed = JSON.parse(response) 
   end
 
+  #calling snack web service to add a snack
   def add_snack
     response = RestClient.post SNACKS_URL, {name: @suggestion.name, location: @suggestion.location}.to_json, content_type: :json
     logger.debug "web service response code => #{response.code}"
@@ -26,5 +28,4 @@ module SuggestionsHelper
       hash[key] = value
     end
   end
-
 end

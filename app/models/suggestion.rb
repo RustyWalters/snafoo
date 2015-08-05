@@ -11,8 +11,8 @@ class Suggestion < ActiveRecord::Base
     current_suggestions = Suggestion.all
     current_suggestions.each do |sug|
       if sug.name.strip.downcase == name.strip.downcase &&
-         sug.suggestedMonth == suggestedMonth &&
-         sug.votes == votes
+        sug.suggestedMonth == suggestedMonth &&   
+        sug.votes >= votes
         errors[:base] << "Duplicate suggestions are not allowed."
         break        
       end
@@ -27,5 +27,4 @@ class Suggestion < ActiveRecord::Base
         errors[:base] << "Monthly suggestion already made."
       end   
   end
-  
 end

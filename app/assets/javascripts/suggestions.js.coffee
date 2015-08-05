@@ -14,3 +14,9 @@ $(document).on "page:change", ->
         console.log(data.votes)
         console.log('#lblvote_'+snackId)
         $('#lblvote_'+snackId).text(data.votes)
+        $('#voting_count').text(data.voting_count)
+        if data.voting_count == 0
+          $('#votes_exceeded').show()
+        else
+          $('#votes_exceeded').hide()
+        

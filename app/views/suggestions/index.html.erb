@@ -1,4 +1,6 @@
   <h1>Snack Voting</h1>
+  <h3><%= label_tag @voting_count, nil, :id => "voting_count"%> votes remaining this month!</h3>
+  <h3><%= label_tag "You may not vote again until next month!", nil, :id => "votes_exceeded", :hidden => true %></h3>
   <p>
     <section class = "snacks">
       <section class = "voting_suggestions">
@@ -14,14 +16,9 @@
         <% end %>
       </section>
       <section class = "always_purchased">
-       <h2> <%= pluralize(@selected_snacks.size, "Purchase") %></h2>
-        <% @selected_snacks.each do |suggestion| %>
-          <h3> <%= suggestion.name %> </h3>  
-               <%= label_tag(:l, "Total votes:") %> 
-               <%= label_tag suggestion.votes, nil, :id => "lblvote_#{suggestion.snackRefId}", :class => "voteLbl"%>
-               <%= submit_tag "Vote Up", :id => suggestion.snackRefId, :type => 'button', :class => "voteBtn" %> <br/>
-               <%= label_tag(:l, "Last Purchase:") %> 
-               <%= suggestion.lastPurchasedDate %>
+       <h2> <%= pluralize(@purchased_snacks.size, "Purchase") %></h2>
+        <% @purchased_snacks.each do |snack| %>
+          <h3> <%= snack['name'] %> </h3>  
         <% end %>
       </section>
     </section>

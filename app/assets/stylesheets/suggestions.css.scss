@@ -4,6 +4,8 @@
 #vote {};
 #SnackId{};
 #voteLbl{};
+#voting_count{};
+#votes_exceeded{};
 
 /*
 IT483 Homework 3
@@ -57,21 +59,25 @@ input[type="text"] {
   width: 100%;
   float: left;
   padding-bottom: 25px;
-  padding-left: 100px;
+  padding-left: 300px;
+  padding-right: 200px;
 }
 
 .available_suggestions {  /*used to control the available_suggestions name styles*/
   float: left;
-  width: 50%;
+  width: 40%;
+  margin-left: 50px;
 
 }
 
 .new_suggestion {  /*used to control the new suggestion styles*/
   float: left;
-  width: 50%;
+  width: 40%;
+  padding-left: 50px;
 }
 
 .create_button {  /*used to control the create button styles*/
-  
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 180px;
 }
-
